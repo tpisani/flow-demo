@@ -1,19 +1,18 @@
 {
-  "name": "Flow Demo",
-  "description": "A demo application to demonstrate Heroku's pipeline",
-  "scripts": {
-  },
-  "env": {
-    "DJANGO_SETTINGS_MODULE": {
-      "required": true
+    "name": "Flow Demo",
+    "description": "A demo application to demonstrate Heroku's pipeline",
+    "env": {
+        "DJANGO_SETTINGS_MODULE": {
+            "required": true
+        }
+    },
+    "buildpacks": [{
+        "url": "urn:buildpack:heroku/python"
+    }],
+    "addons": [
+        "cleardb:ignite"
+    ],
+    "scripts": {
+        "postdeploy": "python manage.py migrate"
     }
-  },
-  "addons": [
-    "heroku-postgresql"
-  ],
-  "buildpacks": [
-    {
-      "url": "urn:buildpack:heroku/python"
-    }
-  ]
 }

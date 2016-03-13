@@ -1,0 +1,19 @@
+{
+  "name": "Flow Demo",
+  "description": "A demo application to demonstrate Heroku's pipeline",
+  "scripts": {
+  },
+  "env": {
+    "DJANGO_SETTINGS_MODULE": {
+      "required": true
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "urn:buildpack:heroku/python"
+    }
+  ]
+}

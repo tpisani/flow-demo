@@ -1,11 +1,19 @@
 {
-	"name": "Flow Demo",
-	"description": "A demo application to demonstrate Heroku's pipeline",
-	"website": "http://holy-flow.herokuapp.com/",
-	"addons": [
-		"cleardb:ignite"
-	],
-	"scripts": {
-		"postdeploy": "python manage.py migrate"
-	}
+    "name": "Flow Demo",
+    "description": "A demo application to demonstrate Heroku's pipeline",
+    "website": "http://holy-flow.herokuapp.com/",
+    "env": {
+        "DJANGO_SETTINGS_MODULE": {
+            "required": true
+        }
+    },
+    "buildpacks": [{
+        "url": "urn:buildpack:heroku/python"
+    }],
+    "addons": [
+        "cleardb:ignite"
+    ],
+    "scripts": {
+        "postdeploy": "python manage.py migrate"
+    }
 }

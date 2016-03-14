@@ -1,4 +1,4 @@
-from .staging import *
+from .production import *
 
 
 DEBUG = True

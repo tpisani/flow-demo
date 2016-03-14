@@ -1,1 +1,4 @@
-from .common import *
+from .staging import *
+
+
+DEBUG = True
